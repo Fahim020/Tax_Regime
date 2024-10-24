@@ -1,0 +1,241 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sticky Navbar */
+.navbar {
+    width: 100%;
+    background-color: #333;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 999;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    
+   
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+   
+}
+
+.navbar a:hover {
+    color: #ffcc00;
+    justify-content: end;
+    align-items: end;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    position: fixed;
+    top: 2px; /* Adjust position under navbar */
+    left: 10px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 999;
+}
+
+.sidebar-toggle:hover {
+    background-color: #555;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px; /* Padding to align with the navbar */
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+/* Sidebar Active State */
+.sidebar.active + .content {
+    margin-left: 250px;
+}
+
+/* Main Content */
+.content {
+    padding: 20px;
+    margin-left: 250px; /* Space for sidebar when it's open */
+    transition: margin-left 0.3s ease;
+    padding-top: 80px; /* Padding for sticky navbar */
+}
+
+/* Login Form Styles */
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0px 0px 0px 243px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.login-form h4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.remember-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-container input {
+    margin-right: 10px;
+}
+
+.login-btn {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+.extra-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.extra-options a {
+    color: #333;
+    text-decoration: none;
+}
+
+.extra-options a:hover {
+    color: #ffcc00;
+}
+
+
+
+
+
+
+
+/* Responsive Design */
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .content {
+        margin-left: 0; /* Keep content static without margin adjustment */
+        transition: margin-left 0.3s ease; /* Smooth transition */
+    }
+
+    .sidebar {
+        position: absolute; /* Sidebar stays fixed, content won’t move */
+        width: 200px;
+        left: -200px; /* Hide sidebar off-screen when not active */
+        transition: left 0.3s ease; /* Smooth transition for sidebar toggle */
+    }
+
+    .sidebar.active {
+        left: 0; /* Show sidebar when active */
+    }
+
+    .sidebar-toggle {
+        position: fixed; /* Keeps the toggle button in a fixed position */
+        left: 15px;
+    }
+}
+
+
+/* @media screen and (max-width: 768px) {
+    .content {
+        margin-left: 0;
+    }
+
+    .sidebar.active + .content {
+        margin-left: 0;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar.active {
+        width: 200px;
+    }
+
+    .sidebar-toggle {
+        left: 15px;
+    }
+} */
